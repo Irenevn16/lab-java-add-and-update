@@ -62,9 +62,13 @@ Create the following routes as efficiently as possible, using validation where a
 6. **Write a short answer in README.md**. In your `README.md`, write a short answer to the following questions:
 
    - Did you use the same type of route to update patient information as to update an employee's department?
-   - Why did you choose the selected strategy?
-   - What are the advantages and disadvantages of the strategies you chose for creating these routes?
-   - What is the cost-benefit between using `PUT` and `PATCH`?
+No, PUT para actualizar completamente una clase, y PATCH para cambiar partes específicas
+  - Why did you choose the selected strategy?
+PUT lo usé porque te permite editar todo a la vez, mientras que PATCH es más útil cuando solo quieres modificar una cosa
+  - What are the advantages and disadvantages of the strategies you chose for creating these routes?
+PATCH: modificaciones parciales y específicas. PUT: actualiza por completo
+  - What is the cost-benefit between using `PUT` and `PATCH`?
+
 
 <br>  
 

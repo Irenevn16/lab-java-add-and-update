@@ -1,5 +1,7 @@
 package com.example.demo.controllers;
 
+import com.example.demo.dto.EmployeeDTO;
+import com.example.demo.dto.PatientDTO;
 import com.example.demo.models.Employee;
 import com.example.demo.models.EmployeeStatus;
 import com.example.demo.models.Patient;
@@ -27,20 +29,20 @@ public class HospitalController {
 
     @PostMapping("/patient")
     @ResponseStatus(HttpStatus.CREATED)
-    public Patient addPatient(@RequestBody @Valid Patient patient) {
-        return hospitalService.addPatient(patient);
+    public Patient addPatient(@RequestBody @Valid PatientDTO dto) {
+        return hospitalService.addPatient(dto);
     }
 
     @PostMapping("/doctor")
     @ResponseStatus(HttpStatus.OK)
-    public Employee addDoctor(@RequestBody @Valid Employee employee) {
-        return hospitalService.addDoctor(employee);
+    public Employee addDoctor(@RequestBody @Valid EmployeeDTO dto) {
+        return hospitalService.addDoctor(dto);
     }
 
     @PatchMapping("/doctor/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public Employee updateEmployeeStatus(@PathVariable("id") int id, @RequestBody Employee employee) {
-        return hospitalService.updateEmployeeStatus(id, employee);
+    public Employee updateEmployeeStatus(@PathVariable("id") int id, @RequestBody EmployeeDTO dto) {
+        return hospitalService.updateEmployeeStatus(id, dto.toString());
 
     }
 
